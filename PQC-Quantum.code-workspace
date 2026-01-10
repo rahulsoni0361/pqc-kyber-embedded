@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "C:/Users/ro/AppData/Local/Programs/Python/Python314/Lib/site-packages/kyber_py"
+		},
+		{
+			"path": "../../../ccompilers"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "PQC-Quantum"
+	}
+}
