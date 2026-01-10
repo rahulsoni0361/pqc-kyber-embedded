@@ -1,4 +1,10 @@
 # pqc-kyber-embedded
+## Status: Early Development 
+
+ **Contact:** rahulsoni2003+git@gmail.com  
+**Subject:** PQC Kyber Implementation Inquiry
+
+Not tested well at the time of writing this RRADME.md
 
 **Post-Quantum Cryptography (CRYSTALS-Kyber / ML-KEM) for Embedded Systems**
 
@@ -83,42 +89,21 @@ sudo make install
 
 | Platform | Status | Flash | RAM | Notes |
 |----------|--------|-------|-----|-------|
-| **ESP32** | ✅ Tested | 45KB | 8KB | Recommended |
-| **ESP32-S3** | ✅ Tested | 45KB | 8KB | Hardware accel |
-| **ESP8266** | ⚠️ Limited | 45KB | 4KB | Tight fit |
-| **Arduino Mega** | ✅ Tested | 32KB | 2KB | Works |
-| **Arduino Due** | ✅ Tested | 30KB | 2KB | Faster |
-| **STM32** | ✅ Tested | 32KB | 4KB | All Cortex-M |
-| **nRF52** | ✅ Tested | 30KB | 2KB | BLE + PQC |
-| **RP2040 (Pico)** | ✅ Tested | 30KB | 2KB | Dual-core |
-| **Raspberry Pi** | ✅ Tested | - | - | All models |
-| **x86/x64** | ✅ Tested | - | - | Desktop/server |
-| **Zynq (ARM)** | ✅ Tested | - | - | Bare-metal |
-| **Zynq (FPGA)** | 🚧 In Progress | - | - | NTT accel |
+| **ESP32** |  
+| **ESP32-S3** | 
+| **ESP8266** |  
+| **Arduino Mega** | 
+| **Arduino Due** |  
+| **STM32** |  
+| **nRF52** |  
+| **RP2040 (Pico)** |  
+| **Raspberry Pi** |  
+| **x86/x64** |  
+| **Zynq (ARM)** |  
+| **Zynq (FPGA)** |  
 
 ## 📊 Performance Benchmarks
-
-**ESP32 @ 240MHz:**
-| Operation | Time | Throughput |
-|-----------|------|------------|
-| KeyGen | 12.3 ms | 81 ops/sec |
-| Encapsulate | 14.7 ms | 68 ops/sec |
-| Decapsulate | 13.9 ms | 72 ops/sec |
-
-**STM32F4 @ 168MHz:**
-| Operation | Time | Throughput |
-|-----------|------|------------|
-| KeyGen | 18.5 ms | 54 ops/sec |
-| Encapsulate | 22.1 ms | 45 ops/sec |
-| Decapsulate | 21.3 ms | 47 ops/sec |
-
-**Raspberry Pi 4:**
-| Operation | Time | Throughput |
-|-----------|------|------------|
-| KeyGen | 1.2 ms | 833 ops/sec |
-| Encapsulate | 1.5 ms | 667 ops/sec |
-| Decapsulate | 1.4 ms | 714 ops/sec |
-
+ 
 ## 🛡️ Security & Compliance
 
 - **NIST FIPS 203** (ML-KEM) compliant
@@ -215,5 +200,6 @@ Star this repo to follow development and show support for quantum-safe embedded 
 ---
 
 **🔐 Protect Your IoT Devices Against Quantum Threats**
+
 
 The quantum computing threat is real. Start your PQC migration today.
