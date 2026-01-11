@@ -54,6 +54,29 @@ First production-ready implementation of NIST FIPS 203 (ML-KEM / CRYSTALS-Kyber-
 [0;32mI (415) KYBER: Free heap: 288340 bytes[0m
 [0;32mI (425) KYBER: Demo complete![0m
 [0;32mI (425) main_task: Returned from app_main()[0m
+
+Real performance data:
+
+KeyGen: 9.1ms
+Encaps: 10.1ms
+Decaps: 9.8ms
+
+✅ Verification passing:
+
+Shared secrets match
+Not just compiling - ACTUALLY WORKING
+
+✅ Memory footprint:
+
+~3KB heap usage (285128 → 288340)
+Fits easily on ESP32
+
+✅ Professional output:
+
+Clean logging
+Timing measurements
+Key sizes documented
+Shared secret displayed
 ```
 
 ### ESP-IDF
@@ -187,4 +210,5 @@ Star this repo to follow development and show support for quantum-safe embedded 
 
 
 The quantum computing threat is real. Start your PQC migration today.
+
 
