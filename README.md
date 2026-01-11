@@ -31,45 +31,29 @@ First production-ready implementation of NIST FIPS 203 (ML-KEM / CRYSTALS-Kyber-
 - ✅ No external dependencies
 - ✅ MIT licensed (free for commercial use)
 
-## ⚡ Quick Start - Arduino
-```cpp
-#include <Kyber.h>
-
-void setup() {
-  Serial.begin(115200);
-  
-  // Generate quantum-safe keypair
-  uint8_t pk[KYBER512_PUBLICKEYBYTES];
-  uint8_t sk[KYBER512_SECRETKEYBYTES];
-  kyber512_keypair(pk, sk);
-  
-  // Encapsulate shared secret (sender)
-  uint8_t ct[KYBER512_CIPHERTEXTBYTES];
-  uint8_t ss_sender[KYBER512_SHAREDSECRETBYTES];
-  kyber512_encapsulate(ct, ss_sender, pk);
-  
-  // Decapsulate shared secret (receiver)
-  uint8_t ss_receiver[KYBER512_SHAREDSECRETBYTES];
-  kyber512_decapsulate(ss_receiver, ct, sk);
-  
-  // Both sides now have identical quantum-safe shared secret!
-  Serial.println(memcmp(ss_sender, ss_receiver, 32) == 0 ? "SUCCESS" : "FAILED");
-}
+## ⚡ Test Results - ESP 32
 ```
-
-## 📦 Installation
-
-### Arduino IDE
-```
-Library Manager → Search "pqc-kyber-embedded" → Install
-```
-
-### PlatformIO
-```ini
-[env:esp32]
-platform = espressif32
-lib_deps = 
-    pqc-kyber-embedded
+[0;32mI (325) KYBER: ===========================================[0m
+[0;32mI (335) KYBER:   Kyber-512 Post-Quantum KEM Demo[0m
+[0;32mI (335) KYBER: ===========================================[0m
+[0;32mI (345) KYBER: Key sizes:[0m
+[0;32mI (345) KYBER:   Public Key:  800 bytes[0m
+[0;32mI (355) KYBER:   Secret Key:  1632 bytes[0m
+[0;32mI (355) KYBER:   Ciphertext:  768 bytes[0m
+[0;32mI (365) KYBER:   Shared Key:  32 bytes[0m
+[0;32mI (365) KYBER: Free heap: 285128 bytes[0m
+[0;32mI (365) KYBER: [1] Generating keypair...[0m
+[0;32mI (385) KYBER:     Time: 9073 us[0m
+[0;32mI (385) KYBER: [2] Encapsulating shared secret...[0m
+[0;32mI (395) KYBER:     Time: 10082 us[0m
+[0;32mI (395) KYBER: [3] Decapsulating shared secret...[0m
+[0;32mI (405) KYBER:     Time: 9838 us[0m
+[0;32mI (405) KYBER: [4] Verifying shared secrets...[0m
+[0;32mI (405) KYBER:     SUCCESS! Shared secrets match.[0m
+[0;32mI (415) KYBER:     Shared secret: 09c661cb6b41fafd9de57e21b202b7a7...[0m
+[0;32mI (415) KYBER: Free heap: 288340 bytes[0m
+[0;32mI (425) KYBER: Demo complete![0m
+[0;32mI (425) main_task: Returned from app_main()[0m
 ```
 
 ### ESP-IDF
@@ -203,3 +187,4 @@ Star this repo to follow development and show support for quantum-safe embedded 
 
 
 The quantum computing threat is real. Start your PQC migration today.
+
